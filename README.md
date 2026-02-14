@@ -1,6 +1,8 @@
-# BaseUI React19 Vite8 Starter
+# {{PROJECT_NAME}}
 
-Opinionated starter template featuring modern React with animated UI components and theme management.
+{{DESCRIPTION}}
+
+> Generated with [create-bunspace](https://github.com/mks2508/create-bunspace)
 
 ## Features
 

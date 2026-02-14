@@ -1,9 +1,9 @@
 {
-  "name": "baseui-react19-vite8-starter",
+  "name": "{{PROJECT_NAME}}",
   "private": true,
   "version": "1.0.0",
-  "description": "BaseUI React19 Vite8Experimental mks-ui theme manager opinionated starter project",
-  "author": "mks2508",
+  "description": "{{DESCRIPTION}}",
+  "author": "{{AUTHOR}}",
   "license": "MIT",
   "type": "module",
   "scripts": {

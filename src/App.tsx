@@ -41,7 +41,7 @@ export function App() {
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-3">
-            <h1 className="text-xl font-bold">BaseUI React19 Starter</h1>
+            <h1 className="text-xl font-bold">{{PROJECT_TITLE}}</h1>
             <Badge variant="secondary">v1.0</Badge>
           </div>
 
@@ -72,11 +72,10 @@ export function App() {
         {/* Hero Section */}
         <section className="mb-12 text-center">
           <h2 className="text-4xl font-bold mb-4">
-            Welcome to BaseUI React19 Starter
+            Welcome to {{PROJECT_TITLE}}
           </h2>
           <p className="text-muted-foreground text-lg mb-6 max-w-2xl mx-auto">
-            Opinionated template with BaseUI, React 19, Vite 8, and theme management.
-            Built for developers who want a modern, animated UI out of the box.
+            {{DESCRIPTION}}
           </p>
           <div className="flex justify-center gap-4">
             <Button size="lg">
