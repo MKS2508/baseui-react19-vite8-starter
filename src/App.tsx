@@ -25,6 +25,7 @@ import {
 } from "@mks2508/mks-ui/react";
 import ShinyText from "@/components/ShinyText";
 import ClickSpark from "@/components/ClickSpark";
+import Counter from "@/components/Counter";
 
 // Template variables - replaced by scaffolder
 // In dev mode, show friendly placeholders; in production, scaffolder replaces these
@@ -43,6 +44,13 @@ export function App() {
   });
 
   return (
+    <ClickSpark
+      sparkColor="#f97316"
+      sparkCount={12}
+      sparkRadius={35}
+      sparkSize={12}
+      duration={600}
+    >
     <div className="min-h-screen bg-background text-foreground grain-overlay tech-grid">
       {/* Header */}
       <header className="sticky top-0 z-50 w-full border-b border-border/50 glass">
@@ -113,29 +121,30 @@ export function App() {
         </section>
 
         {/* HMR Demo */}
-        <section className="mb-16 text-center">
-          <ClickSpark
-            sparkColor="hsl(var(--primary))"
-            sparkCount={12}
-            sparkRadius={30}
-            duration={500}
-          >
-            <Card className="inline-block glass border-border/50">
-              <CardContent className="p-8">
-                <p className="font-mono text-sm text-muted-foreground mb-4">
-                  Edit src/App.tsx and save to test HMR
-                </p>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  onClick={() => setCount((c) => c + 1)}
-                  className="font-mono-emphasis"
-                >
-                  Count: {count}
-                </Button>
-              </CardContent>
-            </Card>
-          </ClickSpark>
+        <section className="mb-16 flex justify-center">
+          <Card className="glass border-border/50">
+            <CardContent className="p-8 flex flex-col items-center gap-4">
+              <p className="font-mono text-sm text-muted-foreground">
+                Edit src/App.tsx and save to test HMR
+              </p>
+              <Counter
+                value={count}
+                fontSize={48}
+                fontWeight={600}
+                textColor="hsl(var(--primary))"
+                gradientFrom="hsl(var(--background))"
+                gradientTo="transparent"
+              />
+              <Button
+                variant="outline"
+                size="lg"
+                onClick={() => setCount((c) => c + 1)}
+                className="font-mono-emphasis"
+              >
+                Increment
+              </Button>
+            </CardContent>
+          </Card>
         </section>
 
         {/* Feature Cards */}
@@ -221,6 +230,7 @@ export function App() {
         onAnimationSettingsChange={setAnimationSettings}
       />
     </div>
+    </ClickSpark>
   );
 }
 
