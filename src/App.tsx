@@ -23,6 +23,7 @@ import {
   CardContent,
   CornerBracket,
 } from "@mks2508/mks-ui/react";
+import ShinyText from "@/components/ShinyText";
 
 // Template variables - replaced by scaffolder
 // In dev mode, show friendly placeholders; in production, scaffolder replaces these
@@ -168,10 +169,19 @@ export function App() {
 
       {/* Footer */}
       <footer className="border-t border-border/50 py-6">
-        <div className="container flex items-center justify-center text-sm text-muted-foreground">
-          <span className="font-mono text-xs">
-            Built with @mks2508/mks-ui
-          </span>
+        <div className="container flex items-center justify-center">
+          <a
+            href="https://www.npmjs.com/package/@mks2508/mks-ui"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-mono text-xs hover:text-primary transition-colors"
+          >
+            <ShinyText
+              text="Made with @mks2508/mks-ui"
+              speed={3}
+              className="text-muted-foreground"
+            />
+          </a>
         </div>
       </footer>
 
