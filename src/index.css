@@ -76,6 +76,127 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+/* ============================================
+   Industrial Dashboard - Custom Styles
+   ============================================ */
+
+/* Grain texture overlay for industrial aesthetic */
+.grain-overlay::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  z-index: 9999;
+}
+
+/* Container utility */
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  max-width: 80rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Technical grid background pattern */
+.tech-grid {
+  --grid-color: var(--border);
+  background-image:
+    linear-gradient(to right, oklch(from var(--grid-color) l c h / 0.3) 1px, transparent 1px),
+    linear-gradient(to bottom, oklch(from var(--grid-color) l c h / 0.3) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Staggered entrance animations */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.6s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out forwards;
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.5s ease-out forwards;
+}
+
+/* Stagger delays */
+.stagger-1 { animation-delay: 0.1s; opacity: 0; }
+.stagger-2 { animation-delay: 0.2s; opacity: 0; }
+.stagger-3 { animation-delay: 0.3s; opacity: 0; }
+.stagger-4 { animation-delay: 0.4s; opacity: 0; }
+.stagger-5 { animation-delay: 0.5s; opacity: 0; }
+.stagger-6 { animation-delay: 0.6s; opacity: 0; }
+
+/* Glassmorphism utilities */
+.glass {
+  background-color: oklch(from var(--background) l c h / 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.glass-heavy {
+  background-color: oklch(from var(--background) l c h / 0.9);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Technical border style */
+.border-tech {
+  border: 1px dashed oklch(from var(--border) l c h / 0.5);
+}
+
+/* Monospace emphasis utility */
+.font-mono-emphasis {
+  font-family: 'Geist Mono Variable', ui-monospace, monospace;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
 @theme inline {
   --font-mono: 'Geist Mono Variable', monospace;
   --color-sidebar-ring: var(--sidebar-ring);
