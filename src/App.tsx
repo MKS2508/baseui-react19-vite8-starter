@@ -24,6 +24,7 @@ import {
   CornerBracket,
 } from "@mks2508/mks-ui/react";
 import ShinyText from "@/components/ShinyText";
+import ClickSpark from "@/components/ClickSpark";
 
 // Template variables - replaced by scaffolder
 // In dev mode, show friendly placeholders; in production, scaffolder replaces these
@@ -34,6 +35,7 @@ const DESCRIPTION = import.meta.env.DEV
 
 export function App() {
   const [settingsOpen, setSettingsOpen] = useState(false);
+  const [count, setCount] = useState(0);
   const [animationSettings, setAnimationSettings] = useState<IAnimationSettings>({
     preset: 'wipe',
     direction: 'ltr',
@@ -108,6 +110,32 @@ export function App() {
               <ChevronRight className="size-4" />
             </Button>
           </div>
+        </section>
+
+        {/* HMR Demo */}
+        <section className="mb-16 text-center">
+          <ClickSpark
+            sparkColor="hsl(var(--primary))"
+            sparkCount={12}
+            sparkRadius={30}
+            duration={500}
+          >
+            <Card className="inline-block glass border-border/50">
+              <CardContent className="p-8">
+                <p className="font-mono text-sm text-muted-foreground mb-4">
+                  Edit src/App.tsx and save to test HMR
+                </p>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  onClick={() => setCount((c) => c + 1)}
+                  className="font-mono-emphasis"
+                >
+                  Count: {count}
+                </Button>
+              </CardContent>
+            </Card>
+          </ClickSpark>
         </section>
 
         {/* Feature Cards */}
